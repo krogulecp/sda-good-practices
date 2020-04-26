@@ -5,7 +5,6 @@ package info.krogulec.sda.goodpractices.solid.liskov;
  */
 class Main {
     public static void main(String[] args) {
-        Employee employee = new Volonteer();
-        employee.takeSalary();
+        Volonteer volonteer = new Volonteer();
     }
 }

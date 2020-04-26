@@ -3,11 +3,6 @@ package info.krogulec.sda.goodpractices.solid.liskov;
 /**
  * @author krogulecp
  */
-class Volonteer extends Employee {
-
-    @Override
-    void takeSalary() {
-        //złamanie zasany Liskov Substitution Principle
-        throw new RuntimeException("not used");
-    }
+// Rezygnujemy z dziedziczenia jeśli w pełni nie możemy zagwarantować realizacji wszystkich właściwości klasy bazowej
+class Volonteer {
 }
