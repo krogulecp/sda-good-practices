@@ -7,16 +7,15 @@ import java.math.BigDecimal;
  */
 class SalaryCalculator {
 
-    public BigDecimal calculateSalary(Employee employee, String countryName){
-        BigDecimal salaryWithoutTax = employee.getWorkingDays().multiply(employee.getDailyRate());
+    private final TaxPolicy taxPolicy;
 
-        if (countryName.equals("Germany")){
-            return salaryWithoutTax.multiply(BigDecimal.valueOf(0.79));
-        } else if (countryName.equals("Poland")){
-            return salaryWithoutTax.multiply(BigDecimal.valueOf(0.81));
-        } else {
-            throw new RuntimeException("Country unavailable");
-        }
+    SalaryCalculator(TaxPolicy taxPolicy) {
+        this.taxPolicy = taxPolicy;
+    }
+
+    public BigDecimal calculateSalary(Employee employee){
+        BigDecimal salaryWithoutTax = employee.getWorkingDays().multiply(employee.getDailyRate());
+        return salaryWithoutTax.multiply(BigDecimal.valueOf(1 - taxPolicy.getTax()));
     }
 
 }
