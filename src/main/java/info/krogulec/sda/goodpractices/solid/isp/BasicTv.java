@@ -8,9 +8,4 @@ class BasicTv implements Tv {
     public void display() {
         System.out.println("Basic tv plays");
     }
-
-    @Override
-    public void connectToInternet() {
-        throw new RuntimeException("not implemented");
-    }
 }
