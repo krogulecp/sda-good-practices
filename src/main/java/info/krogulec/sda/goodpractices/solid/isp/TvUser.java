@@ -6,6 +6,8 @@ package info.krogulec.sda.goodpractices.solid.isp;
 class TvUser {
     public static void main(String[] args) {
         Tv basicTv = new BasicTv();
+        SmartTv smartTv = new SmartTvImpl();
+
 
     }
 }
