@@ -1,8 +1,12 @@
 package info.krogulec.sda.goodpractices.designpatterns.builder;
 
+import lombok.Builder;
+
 /**
  * @author krogulecp
  */
+// Jako ciekawostka - można stworzyć buildera poprzez adnotację z biblioteki lombok - żeby to zadziałało potrzebny jest również plugin do intellij (lombok)
+//@Builder
 class Person {
     private String firstName;
     private String lastName;
