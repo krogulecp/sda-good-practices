@@ -6,12 +6,9 @@ package info.krogulec.sda.goodpractices.designpatterns.decorator;
 class BookUser {
 
     public static void main(String[] args) {
-        Book book = new BasicBook();
 
-        Book fictionBook = new FictionBookDecorator(book);
+        Book fictionBook = new FictionBookDecorator(new ScienceBookDecorator(new BasicBook()));
 
-
-        System.out.println("Basic book result: " + book.describe());
-        System.out.println("Fiction book result: " + fictionBook.describe());
+        System.out.println("Result: " + fictionBook.describe());
     }
 }
